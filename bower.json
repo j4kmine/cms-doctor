@@ -1,0 +1,20 @@
+{
+  "name": "cms",
+  "description": "",
+  "main": "",
+  "authors": [
+    "bayu <cbzvdani@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
