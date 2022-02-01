@@ -1,0 +1,49 @@
+<div class="container col-8">
+    <div id="form-user" class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">Banner Information</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">title ID</label>
+                    <input type="text" class="form-control" formControlName="title_ID">
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">subtitle ID</label>
+                    <textarea class="form-control" rows="5" formControlName="subtitle_ID"></textarea>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">title TL</label>
+                    <input type="text" class="form-control" formControlName="title_TL">
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">subtitle TL</label>
+                    <textarea class="form-control" rows="5" formControlName="subtitle_TL"></textarea>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">title US</label>
+                    <input type="text" class="form-control" formControlName="title_US">
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">subtitle US</label>
+                    <textarea class="form-control" rows="5" formControlName="subtitle_US"></textarea>
+
+                </div>
+                <div class="mb-3">
+                    <div class="image-upload">
+                        <img [src]="imageSrc" style="max-width:300px;max-height:300px" />
+                        <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -11,8 +11,11 @@ import { AppComponent } from './app.component';
 import { NavigationModule } from '../app/shared/modules/navigation/navigation.module'
 import { SidebarModule } from '../app/shared/modules/sidebar/sidebar.module'
 import { UserFormModule } from '../app/shared/modules/userform/userform.module'
+import { BannerFormModule } from '../app/shared/modules/bannerform/bannerform.module'
+import { DoctorFormModule } from '../app/shared/modules/doctorform/doctorform.module'
 import {CreateCustomerModule} from '../app/createCustomer/createCustomer.module'
-
+import { CreateBannerModule } from '../app/createBanner/createBanner.module'
+import { CreateDoctorModule } from './createDoctor/createDoctor.module'
 @NgModule({
   declarations: [
     AppComponent
@@ -24,8 +27,12 @@ import {CreateCustomerModule} from '../app/createCustomer/createCustomer.module'
     StoreModule.forRoot({router: routerReducer}),
     NavigationModule,
     UserFormModule,
+    BannerFormModule,
     CreateCustomerModule,
+    CreateBannerModule,
+    DoctorFormModule,
     SidebarModule,
+    CreateDoctorModule,
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

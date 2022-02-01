@@ -35,7 +35,6 @@ ngOnInit(): void {
     sex: this.initialValuesProps.sex,
     tpayid: this.initialValuesProps.tpayid,
     address: this.initialValuesProps.address,
- 
   })
 }
 
