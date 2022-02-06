@@ -24,7 +24,9 @@ ngOnInit(): void {
 }
 
   initializeForm(): void {
-  
+    if (this.initialValuesProps.imageurl && this.initialValuesProps.imageurl != "") {
+      this.imageSrc = this.initialValuesProps.imageurl;
+    }
   this.form = this.fb.group({
     category: this.initialValuesProps.category,
     title_ID: this.initialValuesProps.title_ID,
@@ -34,6 +36,7 @@ ngOnInit(): void {
     title_TL: this.initialValuesProps.title_TL,
     subtitle_TL: this.initialValuesProps.subtitle_TL,
     imagelaunchurl: this.initialValuesProps.imagelaunchurl,
+    imageurl: '',
   })
 }
 handleInputChange(e) {
@@ -51,7 +54,7 @@ _handleReaderLoaded(e) {
   let reader = e.target;
   this.imageSrc = reader.result;
   this.form.patchValue({
-    imagelaunchurl:this.imageSrc
+    imageurl:this.imageSrc
   })
 
 }

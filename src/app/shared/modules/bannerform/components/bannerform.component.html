@@ -6,6 +6,11 @@
         <div class="card-body">
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
                 <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">Category</label>
+                    <input type="text" class="form-control" formControlName="category">
+
+                </div>
+                <div class="mb-3">
                     <label for="exampleInputName1" class="form-label">title ID</label>
                     <input type="text" class="form-control" formControlName="title_ID">
 
@@ -33,6 +38,11 @@
                 <div class="mb-3">
                     <label class="form-label">subtitle US</label>
                     <textarea class="form-control" rows="5" formControlName="subtitle_US"></textarea>
+
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Image Url</label>
+                    <textarea class="form-control" rows="5" formControlName="imagelaunchurl"></textarea>
 
                 </div>
                 <div class="mb-3">

@@ -1,5 +1,6 @@
 export interface DoctorInputInterface {
-  doctorname: string
+  doctorname: string,
+  nip: string,
   education: string
   level: string
   address: string
@@ -7,13 +8,13 @@ export interface DoctorInputInterface {
   email: string
   tpayid: string
   idcategory: string
-  is_promo: boolean
+  ispromo: number | 0
   doctorfee: string
   promopercent: string
   doctorfeepromo: string
-  magrintype: string
+  margintype: string
   percenttpay: string
   feetpay: string
   categoryname: string
-  image: string
+  imgprofile?: string
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit ,Input, Output, EventEmitter, } from '@angular/core';
 import { DoctorInputInterface } from '../../../types/doctorInput.interfce'
-import {FormGroup, FormBuilder} from '@angular/forms'
+import { FormGroup, FormBuilder } from '@angular/forms'
+import {environment} from '../../../../../environments/environment'
 declare var $: any;
 @Component({
   selector: 'mc-doctorform',
@@ -24,9 +25,12 @@ ngOnInit(): void {
 }
 
   initializeForm(): void {
-  
+    if (this.initialValuesProps.imgprofile && this.initialValuesProps.imgprofile != "") {
+      this.imageSrc = `${environment.imageUrl}?route=doctor&name=${this.initialValuesProps.imgprofile.replace(/\s/g, '')}`;
+    }
   this.form = this.fb.group({
     doctorname: this.initialValuesProps.doctorname,
+    nip: this.initialValuesProps.nip,
     education: this.initialValuesProps.education,
     level: this.initialValuesProps.level,
     address: this.initialValuesProps.address,
@@ -34,17 +38,18 @@ ngOnInit(): void {
     email: this.initialValuesProps.email,
     tpayid: this.initialValuesProps.tpayid,
     idcategory: this.initialValuesProps.idcategory,
-    is_promo: this.initialValuesProps.is_promo,
+    ispromo: this.initialValuesProps.ispromo,
     doctorfee: this.initialValuesProps.doctorfee,
     promopercent: this.initialValuesProps.promopercent,
     doctorfeepromo: this.initialValuesProps.doctorfeepromo,
-    magrintype: this.initialValuesProps.magrintype,
+    margintype: this.initialValuesProps.margintype,
     percenttpay: this.initialValuesProps.percenttpay,
     feetpay: this.initialValuesProps.feetpay,
     categoryname: this.initialValuesProps.categoryname,
-    image: this.initialValuesProps.image,
+    imgprofile: '',
     
   })
+  
 }
 handleInputChange(e) {
   var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -61,7 +66,7 @@ _handleReaderLoaded(e) {
   let reader = e.target;
   this.imageSrc = reader.result;
   this.form.patchValue({
-    image:this.imageSrc
+    imgprofile:this.imageSrc
   })
 
 }

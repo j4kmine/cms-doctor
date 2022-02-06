@@ -6,5 +6,6 @@ export interface BannerInputInterface {
   subtitle_US: string
   title_TL: string
   subtitle_TL: string
+  imageurl: string
   imagelaunchurl: string
 }

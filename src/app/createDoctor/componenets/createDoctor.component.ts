@@ -9,13 +9,14 @@ isSubmittingSelector
 import {createDoctorAction} from '../store/actions/createDoctor.action'
 
 @Component({
-  selector: 'mc-create-banner',
+  selector: 'mc-create-doctor',
   templateUrl: './createDoctor.component.html',
   styleUrls: ['./createDoctor.component.scss']
 })
 export class CreateDoctorComponent implements OnInit {
   initialValues: DoctorInputInterface = {
     doctorname: '',
+    nip: '',
     education: '',
     level: '',
     address: '',
@@ -23,15 +24,15 @@ export class CreateDoctorComponent implements OnInit {
     email: '',
     tpayid: '',
     idcategory: '',
-    is_promo: false,
+    ispromo: 0,
     doctorfee: '',
     promopercent: '',
     doctorfeepromo: '',
-    magrintype: '',
+    margintype: '',
     percenttpay: '',
     feetpay: '',
     categoryname: '',
-    image: ''
+    imgprofile: ''
   }
   isSubmitting$: Observable<boolean>
  
@@ -44,7 +45,7 @@ export class CreateDoctorComponent implements OnInit {
   }
 
   onSubmit(DoctorInput: DoctorInputInterface): void {
- 
+
     this.store.dispatch(createDoctorAction({DoctorInput}))
   }
 }

@@ -22,7 +22,8 @@ export class CreateBannerComponent implements OnInit {
     subtitle_US: '',
     title_TL: '',
     subtitle_TL: '',
-    imagelaunchurl: ''
+    imageurl: '',
+    imagelaunchurl:''
   }
   isSubmitting$: Observable<boolean>
  

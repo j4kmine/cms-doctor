@@ -16,6 +16,9 @@ import { DoctorFormModule } from '../app/shared/modules/doctorform/doctorform.mo
 import {CreateCustomerModule} from '../app/createCustomer/createCustomer.module'
 import { CreateBannerModule } from '../app/createBanner/createBanner.module'
 import { CreateDoctorModule } from './createDoctor/createDoctor.module'
+import { EditCustomerModule } from './editCustomer/editCustomer.module'
+import { EditDoctorModule } from './editDoctor/editDoctor.module'
+import { EditBannerModule } from './editBanner/editBanner.module'
 @NgModule({
   declarations: [
     AppComponent
@@ -32,7 +35,10 @@ import { CreateDoctorModule } from './createDoctor/createDoctor.module'
     CreateBannerModule,
     DoctorFormModule,
     SidebarModule,
+    EditCustomerModule,
+    EditDoctorModule,
     CreateDoctorModule,
+    EditBannerModule,
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
