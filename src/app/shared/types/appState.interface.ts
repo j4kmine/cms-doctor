@@ -4,7 +4,8 @@ import { DoctorInputInterface } from '../types/doctorInput.interfce'
 import { EditCustomerStateInterface } from '../../editCustomer/types/editCustomerState.interface'
 import { EditDoctorStateInterface } from '../../editDoctor/types/editDoctorState.interface'
 import { EditBannerStateInterface } from '../../editBanner/types/editBannerState.interface'
-import {GetTablelistResponseInterface} from '../modules/tablelist/types/getTablelistResponse.interface'
+import { GetTablelistResponseInterface } from '../modules/tablelist/types/getTablelistResponse.interface'
+import {AuthStateInterface} from 'src/app/auth/types/authState.interface'
 export interface AppStateInterface {
   createCustomer: CustomerInputInterface,
   createBanner: BannerInputInterface,
@@ -12,5 +13,6 @@ export interface AppStateInterface {
   editCustomer: EditCustomerStateInterface,
   EditDoctor: EditDoctorStateInterface,
   GetTablelist: GetTablelistResponseInterface,
-  EditBanner: EditBannerStateInterface
+  EditBanner: EditBannerStateInterface,
+  auth: AuthStateInterface
 }

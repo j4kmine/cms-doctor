@@ -39,7 +39,7 @@ export class CreateCustomerEffect {
       this.actions$.pipe(
         ofType(createCustomerSuccessAction),
         tap(({customer}) => {
-          this.router.navigate(['/customer/new', {}])
+          this.router.navigate(['/listcustomer', {}])
         })
       ),
     {dispatch: false}

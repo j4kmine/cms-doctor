@@ -7,4 +7,6 @@ import {Component} from '@angular/core'
 })
 export class listCustomerComponent {
   apiUrl = 'customer'
+  header = ["ID", "Name", "Email", "Contact"]
+  field = ["_idx","customername","email","phonenumber"]
 }

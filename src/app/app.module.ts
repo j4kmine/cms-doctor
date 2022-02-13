@@ -21,6 +21,11 @@ import { EditCustomerModule } from './editCustomer/editCustomer.module'
 import { EditDoctorModule } from './editDoctor/editDoctor.module'
 import { EditBannerModule } from './editBanner/editBanner.module'
 import { listCustomerModule } from './listCustomer/listCustomer.module'
+import { listDoctorModule } from './listDoctor/listDoctor.module'
+import { listBannerModule } from './listBanner/listBanner.module'
+import { PersistanceService } from './shared/services/persistance.service';
+import { AuthInterceptor } from './shared/services/authinterceptor.service';
+import {AuthModule} from 'src/app/auth/auth.module'
 @NgModule({
   declarations: [
     AppComponent
@@ -43,6 +48,9 @@ import { listCustomerModule } from './listCustomer/listCustomer.module'
     TablelistModule,
     EditBannerModule,
     listCustomerModule,
+    listDoctorModule,
+    listBannerModule,
+    AuthModule,
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
@@ -50,7 +58,14 @@ import { listCustomerModule } from './listCustomer/listCustomer.module'
     }),
     EffectsModule.forRoot([]),
   ],
-  providers: [],
+  providers: [
+    PersistanceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
