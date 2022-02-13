@@ -13,12 +13,14 @@ import { SidebarModule } from '../app/shared/modules/sidebar/sidebar.module'
 import { UserFormModule } from '../app/shared/modules/userform/userform.module'
 import { BannerFormModule } from '../app/shared/modules/bannerform/bannerform.module'
 import { DoctorFormModule } from '../app/shared/modules/doctorform/doctorform.module'
-import {CreateCustomerModule} from '../app/createCustomer/createCustomer.module'
+import { CreateCustomerModule } from '../app/createCustomer/createCustomer.module'
+import { TablelistModule } from '../app/shared/modules/tablelist/tablelist.module'
 import { CreateBannerModule } from '../app/createBanner/createBanner.module'
 import { CreateDoctorModule } from './createDoctor/createDoctor.module'
 import { EditCustomerModule } from './editCustomer/editCustomer.module'
 import { EditDoctorModule } from './editDoctor/editDoctor.module'
 import { EditBannerModule } from './editBanner/editBanner.module'
+import { listCustomerModule } from './listCustomer/listCustomer.module'
 @NgModule({
   declarations: [
     AppComponent
@@ -38,7 +40,9 @@ import { EditBannerModule } from './editBanner/editBanner.module'
     EditCustomerModule,
     EditDoctorModule,
     CreateDoctorModule,
+    TablelistModule,
     EditBannerModule,
+    listCustomerModule,
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

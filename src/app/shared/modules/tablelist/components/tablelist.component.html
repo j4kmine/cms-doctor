@@ -1,0 +1,7 @@
+<div *ngIf="tablelist$ | async">
+
+    <div class="request-items-inner" *ngFor="let request of (tablelist$ | async).results">
+        {{ request.customername }}
+    </div>
+
+</div>

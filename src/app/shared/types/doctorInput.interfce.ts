@@ -1,6 +1,6 @@
 export interface DoctorInputInterface {
-  doctorname: string,
-  nip: string,
+  doctorname: string
+  nip: string
   education: string
   level: string
   address: string
