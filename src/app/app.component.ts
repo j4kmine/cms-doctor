@@ -13,7 +13,7 @@ export class AppComponent implements AfterViewInit,OnInit {
   isLoggedIn$: Observable<boolean>
   constructor(private store: Store) {}
   ngAfterViewInit() {
-    wrapper();
+   
   }
   ngOnInit(): void {
     this.initializeValues()

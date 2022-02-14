@@ -4,8 +4,8 @@ import {map, catchError, switchMap} from 'rxjs/operators'
 import {of} from 'rxjs'
 
 import {AuthService} from 'src/app/auth/services/auth.service'
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface'
-import {PersistanceService} from 'src/app/shared/services/persistance.service'
+import {CurrentUserInterface} from '../../../admin/shared/types/currentUser.interface'
+import {PersistanceService} from '../../../admin/shared/services/persistance.service'
 import {
   getCurrentUserAction,
   getCurrentUserSuccessAction,

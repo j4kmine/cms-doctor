@@ -3,11 +3,11 @@ import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
 import {map} from 'rxjs/operators'
 
-import {CurrentUserInterface} from 'src/app/shared/types/currentUser.interface'
+import {CurrentUserInterface} from '../../admin/shared/types/currentUser.interface'
 import {environment} from 'src/environments/environment'
 import {AuthResponseInterface} from 'src/app/auth/types/authResponse.interface'
 import {LoginRequestInterface} from 'src/app/auth/types/loginRequest.interface'
-import {CurrentUserInputInterface} from 'src/app/shared/types/currentUserInput.interface'
+import {CurrentUserInputInterface} from '../../admin/shared/types/currentUserInput.interface'
 
 @Injectable()
 export class AuthService {
