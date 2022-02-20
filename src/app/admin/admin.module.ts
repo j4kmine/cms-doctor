@@ -55,6 +55,10 @@ const routes = [
         loadChildren: () => import('../admin/listLanguage/listLanguage.module').then(m => m.listLanguageModule)
       },
       {
+        path: 'listusercategory',
+        loadChildren: () => import('../admin/listUserCategory/listUserCategory.module').then(m => m.listUserCategoryModule)
+      },
+      {
         path: 'listbanner',
         loadChildren: () => import('../admin/listBanner/listBanner.module').then(m => m.listBannerModule)
       },
@@ -69,6 +73,10 @@ const routes = [
       {
         path: 'user/new',
         loadChildren: () => import('../admin/createUser/createUser.module').then(m => m.CreateUserModule)
+      },
+      {
+        path: 'usercategory/new',
+        loadChildren: () => import('../admin/createUserCategory/createUserCategory.module').then(m => m.CreateUserCategoryModule)
       },
       {
         path: 'language/new',
@@ -97,6 +105,10 @@ const routes = [
       {
         path: 'language/:id/edit',
         loadChildren: () => import('../admin/editLanguage/editLanguage.module').then(m => m.EditLanguageModule)
+      },
+      {
+        path: 'usercategory/:id/edit',
+        loadChildren: () => import('../admin/editUserCategory/editUserCategory.module').then(m => m.EditUserCategoryModule)
       }
     ]
   }

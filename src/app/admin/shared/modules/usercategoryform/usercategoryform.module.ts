@@ -9,4 +9,4 @@ import {ReactiveFormsModule} from '@angular/forms'
   declarations: [UserCategoryformComponent],
   exports: [UserCategoryformComponent]
 })
-export class BannerFormModule {}
+export class UserCategoryFormModule {}

@@ -11,7 +11,7 @@ export class UserCategoryformComponent implements OnInit {
   @Input('initialValues') initialValuesProps: UserCategoryInputInterface
   @Input('isSubmitting') isSubmittingProps: boolean
 
-  @Output('UsercategorySubmit') UsercategorySubmitEvent = new EventEmitter<
+  @Output('usercategorySubmit') UsercategorySubmitEvent = new EventEmitter<
   UserCategoryInputInterface
 >()
 

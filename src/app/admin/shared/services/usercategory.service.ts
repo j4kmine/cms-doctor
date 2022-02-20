@@ -11,7 +11,7 @@ import {UserCategoryInputInterface} from '../types/userCategoryInput.interface'
 export class UserCategoryService {
   constructor(private http: HttpClient) {}
 
-  getUser(id: number): Observable<UserCategoryInputInterface> {
+  getUserCategory(id: number): Observable<UserCategoryInputInterface> {
 
     const fullUrl = `${environment.apiUrl}/usercategory/getusercategory/${id}`
     return this.http.get<UserCategoryInputInterface>(fullUrl).pipe(
