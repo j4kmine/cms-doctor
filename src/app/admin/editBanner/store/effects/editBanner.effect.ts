@@ -39,7 +39,7 @@ export class EditBannerEffect {
       this.actions$.pipe(
         ofType(editBannerSuccessAction),
         tap(({banner}) => {
-          this.router.navigate(['/banner/new', {}])
+          this.router.navigate(['admin/listbanner', {}])
         })
       ),
     {dispatch: false}

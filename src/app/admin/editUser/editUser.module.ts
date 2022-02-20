@@ -16,7 +16,7 @@ import {StoreModule} from '@ngrx/store'
 
 const routes = [
   {
-    path: 'user/:id/edit',
+    path: '',
     component: EditUserComponent
   }
 ]

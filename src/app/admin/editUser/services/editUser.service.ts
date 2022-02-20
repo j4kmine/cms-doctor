@@ -16,7 +16,7 @@ export class editUserService {
     customerInput: UserInputInterface
   ): Observable<any> {
   
-    const fullUrl = `${environment.apiUrl}/customer/update/${id}`
+    const fullUrl = `${environment.apiUrl}/user/update/${id}`
     return this.http
       .post<any>(fullUrl, customerInput)
       .pipe(
