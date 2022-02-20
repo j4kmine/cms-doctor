@@ -39,7 +39,7 @@ export class EditUserEffect {
       this.actions$.pipe(
         ofType(editUserSuccessAction),
         tap(({user}) => {
-          this.router.navigate(['/listuser', {}])
+          this.router.navigate(['admin/listuser', {}])
         })
       ),
     {dispatch: false}

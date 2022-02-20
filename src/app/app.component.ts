@@ -3,6 +3,7 @@ declare var wrapper: any;
 import { isLoggedInSelector } from 'src/app/auth/store/selectors'
 import { Observable } from 'rxjs'
 import { Store, select } from '@ngrx/store'
+import { Router } from '@angular/router'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +12,7 @@ import { Store, select } from '@ngrx/store'
 export class AppComponent implements AfterViewInit,OnInit {
   title = 'mydouctor-cms';
   isLoggedIn$: Observable<boolean>
-  constructor(private store: Store) {}
+  constructor(private store: Store,private router: Router) {}
   ngAfterViewInit() {
    
   }
@@ -19,6 +20,10 @@ export class AppComponent implements AfterViewInit,OnInit {
     this.initializeValues()
   }
   initializeValues(): void {
-    this.isLoggedIn$ = this.store.pipe(select(isLoggedInSelector))
+    this.store.select(isLoggedInSelector).subscribe((isloggedin) => {
+      if (!isloggedin) {
+        this.router.navigate(['auth/login']);
+        }
+    })
   }
 }

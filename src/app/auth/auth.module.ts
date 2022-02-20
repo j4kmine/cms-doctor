@@ -11,7 +11,8 @@ import {AuthService} from 'src/app/auth/services/auth.service'
 
 import {PersistanceService} from '../admin/shared/services/persistance.service'
 import {LoginEffect} from 'src/app/auth/store/effects/login.effect'
-import {LoginComponent} from 'src/app/auth/components/login/login.component'
+import { LoginComponent } from 'src/app/auth/components/login/login.component'
+
 import {GetCurrentUserEffect} from 'src/app/auth/store/effects/getCurrentUser.effect'
 
 import {LogoutEffect} from './store/effects/logout.effect'
@@ -19,6 +20,10 @@ import {LogoutEffect} from './store/effects/logout.effect'
 const routes = [
   {
     path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'logout',
     component: LoginComponent
   }
 ]

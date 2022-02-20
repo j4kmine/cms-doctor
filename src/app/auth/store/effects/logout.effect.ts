@@ -12,8 +12,9 @@ export class LogoutEffect {
       this.actions$.pipe(
         ofType(logoutAction),
         tap(() => {
+       
           this.persistanceService.set('accessToken', '')
-          this.router.navigateByUrl('/')
+          this.router.navigateByUrl('auth/login')
         })
       ),
     {dispatch: false}

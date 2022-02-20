@@ -39,7 +39,7 @@ export class LoginEffect {
       this.actions$.pipe(
         ofType(loginSuccessAction),
         tap(() => {
-          this.router.navigateByUrl('/')
+          this.router.navigateByUrl('/admin/listcustomer')
         })
       ),
     {dispatch: false}

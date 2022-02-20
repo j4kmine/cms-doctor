@@ -39,7 +39,7 @@ export class CreateUserEffect {
       this.actions$.pipe(
         ofType(createUserSuccessAction),
         tap(({user}) => {
-          this.router.navigate(['/listuser', {}])
+          this.router.navigate(['admin/listuser', {}])
         })
       ),
     {dispatch: false}

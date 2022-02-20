@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core'
 import {FormGroup, FormBuilder, Validators} from '@angular/forms'
 import {Store, select} from '@ngrx/store'
-import {Observable} from 'rxjs'
-
+import { Observable } from 'rxjs'
+import { Router } from '@angular/router'
+import {PersistanceService} from '../../../admin/shared/services/persistance.service'
 import {
+  isLoggedInSelector,
   isSubmittingSelector,
 } from 'src/app/auth/store/selectors'
 
@@ -20,7 +22,7 @@ export class LoginComponent implements OnInit {
   isSubmitting$: Observable<boolean>
  
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private router: Router,private fb: FormBuilder, private store: Store,  private persistanceService: PersistanceService) {}
 
   ngOnInit(): void {
     this.initializeForm()
@@ -28,6 +30,15 @@ export class LoginComponent implements OnInit {
   }
 
   initializeValues(): void {
+    this.store.select(isLoggedInSelector).subscribe((isloggedin) => {
+      if (isloggedin) {
+        this.router.navigate(['admin/listcustomer']);
+        }
+    })
+    const token = this.persistanceService.get('accessToken')
+    if (token) {
+      this.router.navigate(['admin/listcustomer']);
+    }
     this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
   }
 
