@@ -16,13 +16,16 @@ import { DoctorFormModule } from './shared/modules/doctorform/doctorform.module'
 import { CreateCustomerModule } from './createCustomer/createCustomer.module'
 import { TablelistModule } from './shared/modules/tablelist/tablelist.module'
 import { CreateBannerModule } from './createBanner/createBanner.module'
+import { CreateUserModule } from './createUser/createUser.module'
 import { CreateDoctorModule } from './createDoctor/createDoctor.module'
+import { EditUserModule } from './editUser/editUser.module'
 import { EditCustomerModule } from './editCustomer/editCustomer.module'
 import { EditDoctorModule } from './editDoctor/editDoctor.module'
 import { EditBannerModule } from './editBanner/editBanner.module'
 import { listCustomerModule } from './listCustomer/listCustomer.module'
 import { listDoctorModule } from './listDoctor/listDoctor.module'
 import { listBannerModule } from './listBanner/listBanner.module'
+import { listUserModule } from './listUser/listUser.module'
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/authinterceptor.service';
 import { Routes, RouterModule } from '@angular/router';
@@ -32,8 +35,16 @@ const routes = [
     component: AdminComponent,
     children: [
       {
+        path: '',
+        loadChildren: () => import('../admin/listCustomer/listCustomer.module').then(m => m.listCustomerModule)
+      },
+      {
         path: 'listcustomer',
         loadChildren: () => import('../admin/listCustomer/listCustomer.module').then(m => m.listCustomerModule)
+      },
+      {
+        path: 'listuser',
+        loadChildren: () => import('../admin/listUser/listUser.module').then(m => m.listUserModule)
       },
       {
         path: 'listdoctor',
@@ -52,6 +63,10 @@ const routes = [
         loadChildren: () => import('../admin/createCustomer/createCustomer.module').then(m => m.CreateCustomerModule)
       },
       {
+        path: 'user/new',
+        loadChildren: () => import('../admin/createUser/createUser.module').then(m => m.CreateUserModule)
+      },
+      {
         path: 'doctor/new',
         loadChildren: () => import('../admin/createDoctor/createDoctor.module').then(m => m.CreateDoctorModule)
       },
@@ -62,6 +77,10 @@ const routes = [
       {
         path: 'customer/:id/edit',
         loadChildren: () => import('../admin/editCustomer/editCustomer.module').then(m => m.EditCustomerModule)
+      },
+      {
+        path: 'user/:id/edit',
+        loadChildren: () => import('../admin/editUser/editUser.module').then(m => m.EditUserModule)
       },
       {
         path: 'doctor/:id/edit',
@@ -94,6 +113,9 @@ const routes = [
     listCustomerModule,
     listDoctorModule,
     listBannerModule,
+    listUserModule,
+    CreateUserModule,
+    EditUserModule,
   ],
   bootstrap: [AdminComponent]
 })
