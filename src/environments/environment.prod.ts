@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:3002',
+  apiUrl: 'http://150.242.111.251:81',
   apiUrlauth: 'https://conduit.productionready.io/api',
-  imageUrl:'http://localhost:3002/main/getimageinfo/',
+  imageUrl:'http://150.242.111.251:81/main/getimageinfo/',
   limit: 10
 };
