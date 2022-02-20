@@ -51,6 +51,10 @@ const routes = [
         loadChildren: () => import('../admin/listDoctor/listDoctor.module').then(m => m.listDoctorModule)
       },
       {
+        path: 'listlanguage',
+        loadChildren: () => import('../admin/listLanguage/listLanguage.module').then(m => m.listLanguageModule)
+      },
+      {
         path: 'listbanner',
         loadChildren: () => import('../admin/listBanner/listBanner.module').then(m => m.listBannerModule)
       },
@@ -65,6 +69,10 @@ const routes = [
       {
         path: 'user/new',
         loadChildren: () => import('../admin/createUser/createUser.module').then(m => m.CreateUserModule)
+      },
+      {
+        path: 'language/new',
+        loadChildren: () => import('../admin/createLanguage/createLanguage.module').then(m => m.CreateLanguageModule)
       },
       {
         path: 'doctor/new',
@@ -85,6 +93,10 @@ const routes = [
       {
         path: 'doctor/:id/edit',
         loadChildren: () => import('../admin/editDoctor/editDoctor.module').then(m => m.EditDoctorModule)
+      },
+      {
+        path: 'language/:id/edit',
+        loadChildren: () => import('../admin/editLanguage/editLanguage.module').then(m => m.EditLanguageModule)
       }
     ]
   }

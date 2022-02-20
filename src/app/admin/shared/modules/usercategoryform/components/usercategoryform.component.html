@@ -1,0 +1,24 @@
+<div class="container col-8">
+    <div id="form-user" class="card card-outline-secondary">
+        <div class="card-header">
+            <h3 class="mb-0">User Category Information</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">UserCategory</label>
+                    <input type="text" class="form-control" formControlName="usercategory">
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputName1" class="form-label">HomeScree</label>
+                    <input type="text" class="form-control" formControlName="homescreen">
+
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div>
